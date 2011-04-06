@@ -61,6 +61,12 @@ def pygments_processor(blog, content):
     return content
 
 
+def markdown_processor(blog, content):
+    import markdown
+    md = markdown.Markdown()
+    return md.convert(content)
+
+
 def template_processor(blog, content):
     '''Renders the blog entry as a Jinja template'''
 
@@ -77,15 +83,23 @@ def template_processor(blog, content):
     template = jinja2.Template(content)
     return template.render(context)
 
-
 ENTRY_PROCESSORS = [
-    pygments_processor,
-    template_processor,
+    (r'^.*\.md$', markdown_processor),
+    (r'.*', pygments_processor),
+    (r'.*', template_processor),
 ]
+
+_COMPILED_ENTRY_PROCESSORS = [
+    (re.compile(e[0]), e[1]) for e in ENTRY_PROCESSORS
+]
+
 
 class BlogEntry(object):
     def __init__(self, filename, headers, content):
         self.filename = filename
+        self.entry_processors = (
+            x[1] for x in _COMPILED_ENTRY_PROCESSORS if x[0].match(filename)
+        )
         self.title = headers['title']
         if 'slug' in headers:
             self.slug = headers['slug']
@@ -93,13 +107,14 @@ class BlogEntry(object):
             self.slug = slugify(self.title)
         self.author = headers.get('author', None)
         self.date = headers['date']
+        self.summary = headers['summary']
         self.tags = headers['tags']
         self.content = content
         self.url = None
 
     def render(self, blog):
         content = self.content
-        for processor in ENTRY_PROCESSORS:
+        for processor in self.entry_processors:
             content = processor(blog, content)
 
         self.content = content
@@ -133,7 +148,7 @@ class Tag(object):
         bisect.insort(self.entries, entry)
 
 
-ALL_HEADERS = {'author', 'date', 'title', 'tags'}
+ALL_HEADERS = {'author', 'date', 'summary', 'title', 'tags'}
 REQUIRED_HEADERS = {'title'}
 
 def parse_entry(path):
