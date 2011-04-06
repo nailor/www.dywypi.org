@@ -1,0 +1,15 @@
+{% extends "blog/base.html" %}
+{% import "blog/macros.html" as macros %}
+
+{% set title = "Index" %}
+
+{% block blogcontent %}
+<section class="index">
+  {% for entry in entries %}
+  <article>
+    {{ macros.make_index_entry(entry) }}
+  </article>
+  {% endfor %}
+</section>
+
+{% endblock %}

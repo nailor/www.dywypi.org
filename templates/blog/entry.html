@@ -1,0 +1,10 @@
+{% extends "blog/base.html" %}
+{% import "blog/macros.html" as macros %}
+
+{% set title = entry.title %}
+
+{% block blogcontent %}
+<article class="blogentry">
+  {{ macros.make_entry(entry, "h1") }}
+</article>
+{% endblock %}

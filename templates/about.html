@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% set title = "About me" %}
+
+{% block scripts %}
+{{ super() }}
+<script src="/js/mailaddr.js"></script>
+{% endblock %}
+
+{% block content %}
+<section class="about">
+  <h1>About</h1>
+  <img src="http://en.gravatar.com/userimage/3117756/fd0de9fe0d2bd51866dbb903811e59c6.png"
+       alt="Picture of Jyrki Pulliainen">
+  <p>
+    Hello there! I'm Jyrki Pulliainen or <code>nailor</code> in the
+    interwebs. For a few years now, I've been a keen Python and
+    Javascript developer, even though I have a dark background in PHP.
+    On databases, I swear in the name of NoSQL and
+    advocate <a href="http://couhcdb.org">CouchDB</a>. I also cook a
+    lot, but I don't talk about it in this blog (at least not yet!).
+  </p>
+
+  <p>Boring details: I'm also a Computer Science student at
+    the <a href="http://utu.fi/">University of Turku</a> and I have a
+    long history in web programming. For living, I currently work
+    at <a href="http://taiste.fi/">Taiste</a>, a digital media company
+    based in my hometown, <a href="http://turku.fi/">Turku</a>.
+  </p>
+  <p>
+    You can find me around the web, for example in
+    <a href="http://twitter.com/nailor/">Twitter</a>,
+    <a href="http://github.com/nailor">Github</a>
+    and <a href="http://delicious.com/nailor">Delicious</a>.
+    I also IRC on freenode and IRCNet using nick Nailor.
+  </p>
+  <p>If you need to contact me via mail, feel free to send mail to
+    <span class="ma s">my first name at this domain (obfuscated for
+      spambots)</span> or use Twitter/Github/IRC.
+  </p>
+</section>
+<section class="faq">
+  <h1>General FAQ</h1>
+  <p><em>Equipment?</em> Currently I work with 15" Macbook Pro, using
+  Emacs, rxvt-unicode (more about those in my blog post) and git in
+  everyday coding. As a browser I prefer Chrome or Chromium where
+  available. At home, I've got one quad core Ubuntu desktop with 24
+  inch display and a small Lenovo Edge 11", running Ubuntu.</p>
+
+  <p><em>What's dywypi?</em> Ever
+  played <a href="http://nethack.org">Nethack</a>? No? You should. A
+  phrase Do You Want Your Possessions Identified (or, duh, dywypi)
+    might come familiar then</p>
+</section>
+<section class="projects">
+  <h1>Projects</h1>
+  <p>I've taken part in various open source projects and even started
+    some of my own. I've also been part of organizing some software
+    related events.</p>
+  <p>Projects I've started or I'm the maintainer at the moment:</p>
+  <ul>
+    <li>
+      <a href="http://github.com/inoi/trombi/">trombi</a> &mdash; a
+      CouchDB driver for asynchronous web framework
+      <a href="http://tornadoweb.org">Tornado</a>
+    </li>
+    <li>
+      <a href="http://github.com/inoi/nosedjango/">nosedjango</a>
+      &mdash; a plugin for
+      <a hreF="http://somethingaboutorange.com/mrl/projects/nose/1.0.0/">nose
+      unit test framework</a>
+    </li>
+  </ul>
+  <p>Events I've been organizing</p>
+  <ul>
+    <li>
+      <a href="http://turkuagileday.fi/">Turku Agile Day</a>
+      &mdash; the coolest agile software conference in Finland
+    </li>
+    <li>
+      <a href="http://fi.pycon.org/">Pycon Finland</a>
+    </li>
+  </ul>
+
+  <p>Projects I've contributed in more or less:</p>
+  <ul>
+    <li><a href="http://djangoproject.com">Django</a>
+    <li><a href="http://tornadoweb.org">Tornado</a>
+  </ul>
+</section>
+
+{% endblock %}

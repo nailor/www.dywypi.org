@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <meta charset="utf-8">
+    <title>{{ title }} &mdash; dywypi.org</title>
+    <meta name="author" content="Jyrki Pulliainen">
+
+    {% block meta %}
+    {% endblock %}
+
+    <link href="http://fonts.googleapis.com/css?family=Droid+Sans"
+          rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Droid+Sans+Mono"
+          rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/css/base.css">
+
+    {% block styles %}
+    {% endblock %}
+  </head>
+  <body>
+    <div id="container">
+      <h1><a href="/">Do you want your possessions identified? [ynq]</a></h1>
+      <p class="sub">Random thoughts on tech and other by
+        <a href="/about/">Jyrki Pulliainen</a></p>
+      <nav id="blogmenu">
+        <ul>
+          <li><a href="/">home</a></li>
+          <li><a href="/archive/">archive</a></li>
+          <li><a href="/about/">about</a></li>
+        </ul>
+      </nav>
+      {% block content %}
+      {% endblock %}
+      <div class="footer">
+        <p>Copyright 2011 by Jyrki Pulliainen</p>
+        <p>
+          Content licensed under the Creative Commons
+          attribution-noncommercial-sharealike License.
+        </p>
+      </div>
+    </div>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+    <script>!window.jQuery && document.write('<script src="/js/jquery-1.5.2.min.js"><\/script>')</script>
+    <script src="/js/modernizr-1.7.min.js"></script>
+    {% block scripts %}
+    {% endblock %}
+  </body>
+</html>

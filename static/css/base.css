@@ -1,0 +1,115 @@
+body {
+  font-family: helvetica, sans-serif;
+  color: #333;
+}
+
+#container {
+  margin: 50px auto;
+  width: 700px;
+  padding: 0;
+}
+#container > h1 {
+  font-family: 'Droid Sans Mono', monospace;
+  font-size: 22px;
+  margin-right: 0;
+  padding-right: 0;
+  text-align: right;
+}
+#container > h1 > a:hover {
+  background: #fff;
+}
+div.tail {
+  font-fmaily: 'Droid Sans Mono', monospace;
+  font-size: 12px;
+  color: #666;
+}
+
+div.head, #container > p.sub {
+  font-family: 'Droid Sans Mono', monospace;
+  font-size: 12px;
+  font-style: italic;
+  color: #666;
+  text-align: right;
+}
+
+section.index h1 > a {
+  color: black;
+  text-decoration: none;
+}
+a:hover, a:focus {
+  background: #f1f1f1;
+}
+
+section.index h1 {
+  font-size: 24px;
+  display: inline;
+}
+
+section.index h1::after {
+  content: " —"
+}
+
+section.index article {
+  padding: 10px;
+}
+
+div.time {
+  font-family: Helvetica, sans-serif;
+  color: #888;
+  text-align: right;
+}
+
+div.entry {
+  line-height: 25px;
+}
+
+div.summary, div.summary p {
+  color: #333;
+  display: inline;
+  font-size: 24px;
+}
+
+nav li {
+  display: inline;
+  margin-right: 5px;
+}
+nav ul {
+  padding: 0;
+  margin: 0;
+}
+nav {
+  margin-bottom: 10px;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+a {
+  color: #black;
+}
+
+h1 a, nav a {
+  text-decoration: none;
+}
+div.footer {
+  padding-top: 5px;
+  margin-top: 10px;
+  border-top: 1px solid #f1f1f1;
+  text-align: center;
+  color: #888;
+}
+
+section.about img {
+  float: left;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+pre, code {
+  font-family: 'Droid Sans Mono', monospace;
+  font-size: 12px;;
+}
+article.blogentry > h1 {
+  margin: 0;
+}
+article.blogentry div.head {
+  clear: both;
+  margin-bottom: 5px;
+}

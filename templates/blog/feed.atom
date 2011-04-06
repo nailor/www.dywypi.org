@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  {% if feed_name %}
+  <title>{{ feed_name }} - dywypi.org blog</title>
+  {% else %}
+  <title>dywypi.org blog</title>
+  {% endif %}
+  <link href="http://dywypi.org/" />
+  <updated>{{ entries.0.date.isoformat() }}Z</updated>
+  <author>
+    <name>Jyrki Pulliainen</name>
+    <uri>http://dywypi.org/</uri>
+  </author>
+  <id>http://dywypi.org{{ feed_id }}</id>
+
+  {% for entry in entries %}
+  <entry>
+    <title>{{ entry.title }}</title>
+    <link href="http://dywypi.org{{ entry.url }}" />
+    <id>http://dywypi.org{{ entry.url }}</id>
+    <updated>{{ entry.date }}</updated>
+    {% for tag in entry.tags %}
+    <category term="{{ tag.name }}" />
+    {% endfor %}
+    <content type="html">
+      {{ entry.content|e }}
+    </content>
+  </entry>
+  {% endfor %}
+</feed>

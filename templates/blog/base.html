@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block meta %}
+{{ super() }}
+<link rel="alternate" href="http://feeds.feedburner.com/dywypiorg-blog" type="application/atom+xml" title="dywypi.org" />
+{% endblock %}
+
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" href="/css/blog.css">
+<link rel="stylesheet" href="/css/pygments.css">
+{% endblock %}
+
+{% block content %}
+<div class="body">
+  {% block blogcontent %}
+  {% endblock %}
+</div>
+{% block scripts %}
+{{ super() }}
+<script src="/js/mailaddr.js"></script>
+{% endblock %}
+
+{% endblock content %}
+
