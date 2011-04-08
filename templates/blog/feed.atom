@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   {% if feed_name %}
-  <title>{{ feed_name }} - dywypi.org blog</title>
+  <title>{{ feed_name }} - Do You Want Your Possessions Identified? [ynq]</title>
   {% else %}
   <title>dywypi.org blog</title>
   {% endif %}
