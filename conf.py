@@ -38,7 +38,7 @@ analytics_script = '''
   })();
 
 </script>
-'''
+'''.encode('utf-8')
 
 def post_render_hook(context, data):
     # Don't add the analytics script when using the Stango test server
