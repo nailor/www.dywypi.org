@@ -31,7 +31,9 @@ commits D and E, transforming them to D' and E' respectively, and you
 have a following repository structure (in middle of the rebase):
 
 <pre>
-A - B - C - D' - E' - F (another-branch)
+      D - E - F (another-branch)
+     /
+A - B - C - D' - E' - F (HEAD)
         ^
       master
 </pre>
