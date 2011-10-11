@@ -33,7 +33,7 @@ have a following repository structure (in middle of the rebase):
 <pre>
       D - E - F (another-branch)
      /
-A - B - C - D' - E' - F (HEAD)
+A - B - C - D' - E' - F' (HEAD)
         ^
       master
 </pre>
@@ -55,7 +55,7 @@ structure now:
 <pre>
       D - E - F (another-branch)
      /
-A - B - C - D' - E' - F (HEAD/continue)
+A - B - C - D' - E' - F' (HEAD/continue)
         ^
       master
 </pre>
@@ -99,5 +99,8 @@ A - B - C - D'' - E' - F (HEAD/another-branch)
 This is more of a proof of concept trick and has worked on one real
 life scenario (and I've tested it on simulated environment), but I
 recommend you to back up your working directory / `.git` before trying
-this at home :p
+this at home.
+
+Or (thanks [Akheron](http://twitter.com/akhern)) true warrior just
+digs through reflog and does not waste extra disk space for puny backups!
 
