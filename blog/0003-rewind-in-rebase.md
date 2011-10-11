@@ -44,7 +44,7 @@ rebase, rebase again and correct mistakes or to skip remaining commits
 and manually cherry-pick them back after rebase. But let's assume
 you've modified a load of commits and need to modify yet another load
 of commits in this rebase, so you don't want to abort. The solution?
-Let's just mimick how the rebase works!
+Let's just mimic how the rebase works!
 
 ## Magic part: Rewinding in rebase!
 
@@ -60,8 +60,8 @@ A - B - C - D' - E' - F (HEAD/continue)
       master
 </pre>
 
-Then, let's checkout the commit we want to modify: `git checout D'`
-and let's hack it for the parts that's needed. After hacking, we'll
+Next we'll check out the commit we want to modify: `git checkout D'`
+and hack it for the parts needed. After hacking, we'll
 replay the rebase: Technically rebase with edits is just cherry
 picking of commits, so well do that. First let's see what to
 cherry-pick by running `git log continue`, which returns something
@@ -76,7 +76,7 @@ While repository looks like this:
 <pre>
       D - E - F (another-branch)
      /
-A - B - C - D'' - E' - F (continue)
+A - B - C - D'' - E' - F' (continue)
         ^   ^
    master   HEAD
 </pre>
@@ -96,7 +96,7 @@ A - B - C - D'' - E' - F (HEAD/another-branch)
 
 # Word of caution
 
-This is more of a proof of consept trick and has worked on one real
+This is more of a proof of concept trick and has worked on one real
 life scenario (and I've tested it on simulated environment), but I
 recommend you to back up your working directory / `.git` before trying
 this at home :p
