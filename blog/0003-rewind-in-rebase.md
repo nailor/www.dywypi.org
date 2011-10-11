@@ -49,7 +49,16 @@ Let's just mimick how the rebase works!
 ## Magic part: Rewinding in rebase!
 
 First: Let's create us a point to return to by creating a temporary
-branch in the F commit: `git branch continue`.
+branch in the F commit: `git branch continue`. So you have following
+structure now:
+
+<pre>
+      D - E - F (another-branch)
+     /
+A - B - C - D' - E' - F (HEAD/continue)
+        ^
+      master
+</pre>
 
 Then, let's checkout the commit we want to modify: `git checout D'`
 and let's hack it for the parts that's needed. After hacking, we'll
@@ -63,11 +72,27 @@ like this:
 ea857b6 Moar edits (E')
 </pre>
 
+While repository looks like this:
+<pre>
+      D - E - F (another-branch)
+     /
+A - B - C - D'' - E' - F (continue)
+        ^   ^
+   master   HEAD
+</pre>
+
+
 Now we just replay the rebase by issuing `git cherry-pick ea857b6` and
-`git-cherry-pick 486106d`. No we're back at where we checkouted back
-to the D' and can continue rebase normally! Just do the edits on the F
-you need to do and say `git rebase --continue` and you'll get on with
-your rebase!
+`git-cherry-pick 486106d`. Now we're back at the point where we
+rewinded to the D' and can continue rebase normally! Just do the edits
+on the F you need to do and say `git rebase --continue` and you'll get
+on with your rebase, and finally the tree looks like this:
+
+<pre>
+A - B - C - D'' - E' - F (HEAD/another-branch)
+        ^
+   master
+</pre>
 
 # Word of caution
 
