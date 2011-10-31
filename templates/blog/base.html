@@ -7,7 +7,6 @@
 
 {% block styles %}
 {{ super() }}
-<link rel="stylesheet" href="/css/blog.css">
 <link rel="stylesheet" href="/css/pygments.css">
 {% endblock %}
 
@@ -16,10 +15,6 @@
   {% block blogcontent %}
   {% endblock %}
 </div>
-{% block scripts %}
-{{ super() }}
-<script src="/js/mailaddr.js"></script>
-{% endblock %}
 
 {% endblock content %}
 
