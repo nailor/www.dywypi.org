@@ -32,7 +32,7 @@ div.head, #container > p.sub {
   text-align: right;
 }
 
-section.index h1 > a {
+section.index h1 > a, section.index h1 > a:visited {
   color: black;
   text-decoration: none;
 }
@@ -82,8 +82,8 @@ nav {
   border-bottom: 1px solid #f1f1f1;
 }
 
-a {
-  color: #black;
+a, a:visited {
+  color: black;
 }
 
 h1 a, nav a {
