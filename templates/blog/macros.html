@@ -4,33 +4,40 @@
   </{{ heading_tag }}>
 
   <div class="head info">
-    By <a href="/about/">{{ entry.author }}</a> on {{ entry.date_str }}
+    by <a href="/about/">{{ entry.author }}</a> on {{ entry.date_str }}
   </div>
 
-  {{ entry.content }}
+  <div class="cf content">
+    {{ entry.content }}
 
-  {% if entry.tags %}
-  <div class="tail info">
-    <p>If you want to comment this blog post, just send mail
-      to <span class="ma b">my firstname + blog @ thisdomain.tld</span>.
-      If the question is a proper one, it might get answered. Good ones
-      might even end up on the site.</p>
+    {% if entry.tags %}
+    <div class="tail info">
+      <p>If you want to comment this blog post, just send mail
+        to <span class="ma b">my firstname + blog @ thisdomain.tld</span>.
+        If the question is a proper one, it might get answered. Good ones
+        might even end up on the site.</p>
 
-  <p>Tags:
-    {% for tag in entry.tags %}
-    <a href="{{ tag.url }}">{{ tag.name }}</a>
-    {% endfor %}</p>
+      <p>Tags:
+        {% for tag in entry.tags %}
+        <a href="{{ tag.url }}">{{ tag.name }}</a>
+        {% endfor %}</p>
+    </div>
+    {% endif %}
   </div>
-  {% endif %}
+
 {% endmacro %}
 
 {% macro make_index_entry(entry) %}
-  <div class="entry">
-    <h1>
-      <a href="{{ entry.url }}">{{ entry.title }}</a>
-    </h1>
-    <div class="summary"><p>{{ entry.summary}}</p></div>
-    <div class="time">on {{ entry.date_str }} </div>
-
+  <div>
+    <header>
+      <h2>
+        <a href="{{ entry.url }}"><span></span></a>
+        {{ entry.title }}
+      </h2>
+    </header>
+    <footer>
+      <div class="summary"><p>{{ entry.summary}}</p></div>
+      <div class="time">on {{ entry.date_str }} </div>
+    </footer>
   </div>
 {% endmacro %})

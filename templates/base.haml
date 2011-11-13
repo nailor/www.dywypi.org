@@ -1,0 +1,50 @@
+!!! 5
+%head
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  %meta(charset="utf-8")
+  %meta(name="viewport" content="width=320,initial-scale=1")
+  %title {{ title }} &mdash; dywypi.org
+  %meta(name="author" content="Jyrki Pulliainen")
+
+  {% block meta %}{% endblock %}
+
+  %link(rel="stylesheet" href="/css/base.css")
+  %link(link href="http://fonts.googleapis.com/css?family=Cabin:400,700"
+        rel="stylesheet" type="text/css")
+
+  {% block styles %}{% endblock %}
+
+%body
+  %header.cf
+    %h1
+      %a(href="/")dywypi.org
+    -# %nav
+    -#   %ul
+    -#     %li
+    -#       %a(href="/") home
+    -#     %li
+    -#       %a(href="/archive") archive
+    -#     %li
+    -#       %a(href="/about") about
+
+  %section#main.cf
+    {% block content %}
+    {% endblock %}
+  %script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js")
+  :javascript
+    !window.jQuery && document.write(
+      '<script src="/js/jquery-1.5.2.min.js"><\/script>');
+
+  %script(src="/js/modernizr-1.7.min.js")
+  %script(src="/js/mailaddr.js" language="javascript")
+
+  %footer
+    %p
+      Copyright 2011 by Jyrki Pulliainen
+    %p
+      The content is licensed under a <a rel="license"
+      href="http://creativecommons.org/licenses/by/3.0/">Creative
+      Commons Attribution 3.0 Unported License</a>.

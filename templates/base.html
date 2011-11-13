@@ -1,55 +1,44 @@
-<!doctype html>
-<html lang="en" class="no-js">
-  <head>
-    <!--[if lt IE 9]>
-        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-    <meta charset="utf-8">
-    <title>{{ title }} &mdash; dywypi.org</title>
-    <meta name="author" content="Jyrki Pulliainen">
-
-    {% block meta %}
+<!DOCTYPE html>
+<head>
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <meta charset='utf-8' />
+  <meta content='width=320,initial-scale=1' name='viewport' />
+  <title>{{ title }} &mdash; dywypi.org</title>
+  <meta content='Jyrki Pulliainen' name='author' />
+  {% block meta %}{% endblock %}
+  <link href='/css/base.css' rel='stylesheet' />
+  <link href='http://fonts.googleapis.com/css?family=Cabin:400,700' link='link' rel='stylesheet' type='text/css' />
+  {% block styles %}{% endblock %}
+</head>
+<body>
+  <header class='cf'>
+    <h1>
+      <a href='/'>dywypi.org</a>
+    </h1>
+  </header>
+  <section class='cf' id='main'>
+    {% block content %}
     {% endblock %}
-
-    <link href="http://fonts.googleapis.com/css?family=Droid+Sans"
-          rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Droid+Sans+Mono"
-          rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="/css/base.css">
-
-    {% block styles %}
-    {% endblock %}
-  </head>
-  <body>
-    <div id="container">
-      <h1><a href="/">Do you want your possessions identified? [ynq]</a></h1>
-      <p class="sub">Random thoughts on tech and other by
-        <a href="/about/">Jyrki Pulliainen</a></p>
-      <nav id="blogmenu">
-        <ul>
-          <li><a href="/">home</a></li>
-          <li><a href="/archive/">archive</a></li>
-          <li><a href="/about/">about</a></li>
-        </ul>
-      </nav>
-      {% block content %}
-      {% endblock %}
-      <div class="footer">
-        <p>Copyright 2011 by Jyrki Pulliainen</p>
-        <p>
-          The content is licensed under a <a rel="license"
-          href="http://creativecommons.org/licenses/by/3.0/">Creative
-          Commons Attribution 3.0 Unported License</a>.
-        </p>
-      </div>
-    </div>
-
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-    <script language="javascript">!window.jQuery && document.write('<script src="/js/jquery-1.5.2.min.js"><\/script>')</script>
-    <script src="/js/modernizr-1.7.min.js"></script>
-    <script src="/js/mailaddr.js" language="javascript"></script>
-    {% block scripts %}
-    {% endblock %}
-  </body>
-</html>
+  </section>
+  <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js'></script>
+  <script type='text/javascript'>
+    //<![CDATA[
+      !window.jQuery && document.write(
+        '<script src="/js/jquery-1.5.2.min.js"><\/script>');
+    //]]>
+  </script>
+  <script src='/js/modernizr-1.7.min.js'></script>
+  <script language='javascript' src='/js/mailaddr.js'></script>
+  <footer>
+    <p>
+      Copyright 2011 by Jyrki Pulliainen
+    </p>
+    <p>
+      The content is licensed under a <a rel="license"
+      href="http://creativecommons.org/licenses/by/3.0/">Creative
+      Commons Attribution 3.0 Unported License</a>.
+    </p>
+  </footer>
+</body>

@@ -1,122 +1,202 @@
+html {
+  overflow-y: scroll; }
+
+html, body {
+  margin: 0;
+  padding: 0; }
+
 body {
-  font-family: helvetica, sans-serif;
-  color: #333;
-}
+  background-color: #f5f5f5;
+  margin: 0 auto;
+  font-family: 'Cabin', sans-serif;
+  font-weight: 400; }
+  body > header > nav > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+    body > header > nav > ul > li {
+      display: block;
+      float: left;
+      text-lowercase: uppercase; }
+      body > header > nav > ul > li a {
+        display: block;
+        text-shadow: 0px 1px 0px white; }
+  body > header h1 {
+    margin: 0;
+    padding: 0;
+    text-shadow: 0px 1px 0px white; }
+  body > footer {
+    font-size: 14px;
+    color: #212121;
+    text-align: right;
+    margin-top: 48px; }
 
-#container {
-  margin: 50px auto;
-  width: 700px;
-  padding: 0;
-}
-#container > h1 {
-  font-family: 'Droid Sans Mono', monospace;
-  font-size: 22px;
-  margin-right: 0;
-  padding-right: 0;
-  text-align: right;
-}
-#container > h1 > a:hover {
-  background: #fff;
-}
-div.tail {
-  font-fmaily: 'Droid Sans Mono', monospace;
-  font-size: 12px;
-  color: #666;
-}
+/* Clearfix hack from http://nicolasgallagher.com/micro-clearfix-hack/ */
+/* For modern browsers */
+.cf:before, .cf:after {
+  content: "";
+  display: table; }
 
-div.head, #container > p.sub {
-  font-family: 'Droid Sans Mono', monospace;
-  font-size: 12px;
-  font-style: italic;
-  color: #666;
-  text-align: right;
-}
+.cf:after {
+  clear: both; }
 
-section.index h1 > a, section.index h1 > a:visited {
+/* For IE 6/7 (trigger hasLayout) */
+.cf {
+  zoom: 1; }
+
+a, a:link, a:visited {
   color: black;
-  text-decoration: none;
-}
-a:hover, a:focus {
-  background: #f1f1f1;
-}
+  text-decoration: none; }
 
-section.index h1 {
-  font-size: 24px;
-  display: inline;
-}
+@media only screen and (min-width: 320px) {
+  body {
+    width: 264px; }
+    body > header {
+      display: block;
+      height: 64px; }
 
-section.index h1::after {
-  content: " —"
-}
+  h1 {
+    float: right;
+    font-weight: 700; }
 
-section.index article {
-  padding: 10px;
-}
+  .blogentry {
+    background: #fff; }
+    .blogentry > h1 {
+      float: none;
+      margin: 0;
+      letter-spacing: 1px;
+      padding: 12px 0 0 12px;
+      font-size: 24px;
+      font-weight: 400; }
+    .blogentry .head {
+      padding-left: 12px; }
+    .blogentry > .content {
+      padding: 24px 12px; }
+      .blogentry > .content a {
+        text-decoration: underline; }
 
-div.time {
-  font-family: Helvetica, sans-serif;
-  color: #888;
-  text-align: right;
-}
+  #main {
+    margin-left: -12px; }
+    #main > article.front {
+      width: 264px;
+      background-color: #fff;
+      margin-bottom: 12px;
+      margin-left: 12px;
+      padding-bottom: 24px;
+      padding-top: 24px;
+      overflow: hidden;
+      display: block;
+      position: relative;
+      -webkit-transition: background-color .5s ease-in-out;
+      -moz-transition: background-color .5s ease-in-out; }
+      #main > article.front:hover {
+        background-color: #f5f5f5; }
+      #main > article.front > div {
+        width: 264px; }
+        #main > article.front > div > header {
+          width: 264px; }
+          #main > article.front > div > header a > span {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1; }
+        #main > article.front > div > footer {
+          width: 264px; }
+          #main > article.front > div > footer > div {
+            padding: 0 12px; }
+      #main > article.front h2 {
+        font-size: 20px;
+        padding: 0;
+        margin: 12px; } }
 
-div.entry {
-  line-height: 25px;
-}
+@media only screen and (min-width: 480px) {
+  body {
+    width: 408px; }
 
-div.summary, div.summary p {
-  color: #333;
-  display: inline;
-  font-size: 24px;
-}
+  .blogentry {
+    background: #fff; }
+    .blogentry > h1 {
+      float: none;
+      margin: 0;
+      letter-spacing: 1px;
+      padding: 12px 0 0 12px;
+      font-size: 24px;
+      font-weight: 400; }
+    .blogentry .head {
+      padding-left: 12px; }
+    .blogentry > .content {
+      padding: 24px 12px; }
+      .blogentry > .content a {
+        text-decoration: underline; }
 
-nav li {
-  display: inline;
-  margin-right: 5px;
-}
-nav ul {
-  padding: 0;
-  margin: 0;
-}
-nav {
-  margin-bottom: 10px;
-  border-bottom: 1px solid #f1f1f1;
-}
+  #main > article.front {
+    width: 192px;
+    height: 192px;
+    float: left;
+    padding: 0; }
+    #main > article.front:first-child {
+      float: none;
+      width: 408px; }
+      #main > article.front:first-child:hover > div {
+        margin-left: 0; }
+    #main > article.front:hover > div {
+      margin-left: -204px; }
+    #main > article.front > div {
+      -webkit-transition: margin-left .5s ease-in-out;
+      -moz-transition: margin-left .5s ease-in-out;
+      width: 408px;
+      clear: both; }
+      #main > article.front > div > header {
+        float: left;
+        height: 100%;
+        width: 192px; }
+      #main > article.front > div > footer {
+        float: left;
+        width: 192px; } }
 
-a, a:visited {
-  color: black;
-}
+@media only screen and (min-width: 768px) {
+  body {
+    width: 552px; }
+    body > header {
+      height: 96px; }
 
-h1 a, nav a {
-  text-decoration: none;
-}
-div.footer {
-  font-family: 'Droid Sans Mono', monospace;
-  font-size: 12px;
-  padding-top: 5px;
-  margin-top: 10px;
-  border-top: 1px solid #f1f1f1;
-  text-align: center;
-  color: #888;
-}
+  .blogentry > h1 {
+    padding: 24px 0 0 24px;
+    font-size: 36px; }
+  .blogentry .head {
+    padding-left: 24px; }
+  .blogentry > .content {
+    padding: 48px 24px; }
 
-div.footer a {
-    text-decoration: none;
-    color: #888;
-}
+  #main {
+    margin-left: -24px; }
+    #main > article.front {
+      width: 264px;
+      margin-bottom: 24px;
+      margin-left: 24px; }
+      #main > article.front:first-child {
+        width: 552px; }
+        #main > article.front:first-child:hover > div {
+          margin-left: 0; }
+      #main > article.front:hover > div {
+        margin-left: -264px; }
+      #main > article.front > div {
+        width: 552px; }
+        #main > article.front > div > header {
+          width: 264px; }
+        #main > article.front > div > footer {
+          width: 264px; }
+          #main > article.front > div > footer > div {
+            padding: 0 24px; }
+      #main > article.front h2 {
+        font-size: 24px;
+        margin: 24px; } }
 
-section.about img {
-  float: left;
-  margin-right: 5px;
-  margin-bottom: 5px;
-}
-pre, code {
-  font-family: 'Droid Sans Mono', monospace;
-  font-size: 12px;;
-}
-article.blogentry > h1 {
-  margin: 0;
-}
-article.blogentry div.head {
-  clear: both;
-  margin-bottom: 5px;
-}
+@media only screen and (min-width: 900px) {
+  body {
+    width: 840px; }
+
+  #main > article.front:first-child {
+    width: 840px; } }

@@ -1,0 +1,37 @@
+{% extends "blog/base.html" %}
+{% import "blog/macros.html" as macros %}
+
+{% set title = "Index" %}
+
+{% block content %}
+{% for entry in entries %}
+%article.front
+  {{ macros.make_index_entry(entry) }}
+{% endfor %}
+
+%article.front
+  %div
+    %header
+      %h2
+        %a(href="/archive/")
+          %span
+        Archive
+    %footer
+      .summary
+        %p Blog archive is here
+
+
+%article.front
+  %div
+    %header
+      %h2
+        %a(href="/about/")
+          %span
+        About
+    %footer
+      .summary
+        %p Who am I?
+
+
+
+{% endblock %}

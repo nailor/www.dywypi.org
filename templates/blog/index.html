@@ -1,15 +1,44 @@
 {% extends "blog/base.html" %}
 {% import "blog/macros.html" as macros %}
-
 {% set title = "Index" %}
-
-{% block blogcontent %}
-<section class="index">
-  {% for entry in entries %}
-  <article>
-    {{ macros.make_index_entry(entry) }}
-  </article>
-  {% endfor %}
-</section>
-
+{% block content %}
+{% for entry in entries %}
+<article class='front'>
+  {{ macros.make_index_entry(entry) }}
+</article>
+{% endfor %}
+<article class='front'>
+  <div>
+    <header>
+      <h2>
+        <a href='/archive/'>
+          <span></span>
+        </a>
+        Archive
+      </h2>
+    </header>
+    <footer>
+      <div class='summary'>
+        <p>Blog archive is here</p>
+      </div>
+    </footer>
+  </div>
+</article>
+<article class='front'>
+  <div>
+    <header>
+      <h2>
+        <a href='/about/'>
+          <span></span>
+        </a>
+        About
+      </h2>
+    </header>
+    <footer>
+      <div class='summary'>
+        <p>Who am I?</p>
+      </div>
+    </footer>
+  </div>
+</article>
 {% endblock %}
