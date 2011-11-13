@@ -1,0 +1,324 @@
+@import "variables";
+
+html {
+    overflow-y: scroll;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f5f5f5;
+    margin: 0 auto;
+    font-family: 'Cabin', sans-serif;
+    font-weight: 400;
+    > header {
+        > nav {
+            > ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+
+                > li {
+                    display: block;
+                    float: left;
+                    text-lowercase: uppercase;
+
+                    a {
+                        display: block;
+                        text-shadow: 0px 1px 0px white;
+                    }
+                    a:hover {
+                    }
+                }
+            }
+        }
+        h1 {
+            margin: 0;
+            padding: 0;
+            text-shadow: 0px 1px 0px white;
+        }
+    }
+    > footer {
+        font-size: 14px;
+        color: #212121;
+        text-align: right;
+        margin-top: 48px;
+    }
+}
+
+
+/* Clearfix hack from http://nicolasgallagher.com/micro-clearfix-hack/ */
+/* For modern browsers */
+.cf:before, .cf:after {
+    content:"";
+    display:table;
+}
+
+.cf:after {
+    clear:both;
+}
+
+/* For IE 6/7 (trigger hasLayout) */
+.cf {
+    zoom:1;
+}
+
+a, a:link, a:visited {
+    color: black;
+    text-decoration: none;
+}
+
+
+@media only screen and (min-width: 320px) {
+    body {
+        @include width(4);
+
+        > header {
+            display: block;
+            height: 64px;
+        }
+    }
+
+    h1 {
+        float: right;
+        font-weight: 700;
+    }
+
+    .blogentry {
+        background: #fff;
+
+        > h1 {
+            float: none;
+            margin: 0;
+            letter-spacing: 1px;
+            padding: 12px 0 0 12px;
+            font-size: 24px;
+            font-weight: 400;
+        }
+
+        .head {
+            padding-left: 12px;
+        }
+
+        > .content {
+            padding: 24px 12px;
+            a {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    #main {
+        margin-left: #{-$gutter/2}px;
+
+        > article.front {
+            @include width(4);
+            background-color: #fff;
+            margin-bottom: #{$gutter/2}px;
+            margin-left: #{$gutter/2}px;
+            padding-bottom: #{$gutter}px;
+            padding-top: #{$gutter}px;
+            overflow: hidden;
+            display: block;
+            position: relative;
+            -webkit-transition: background-color .5s ease-in-out;
+            -moz-transition: background-color .5s ease-in-out;
+
+            &:hover {
+                background-color: #f5f5f5;
+            }
+            > div {
+                @include width(4);
+
+                > header {
+                    @include width(4);
+
+                    a > span {
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        top: 0;
+                        left: 0;
+                        z-index: 1;
+                    }
+
+                }
+                > footer {
+                    @include width(4);
+                    > div {
+                        padding: 0 #{$gutter/2}px;
+                    }
+                }
+
+            }
+
+            h2 {
+                font-size: 20px;
+                padding: 0;
+                margin: 12px;
+            }
+        }
+    }
+
+}
+
+
+@media only screen and (min-width: 480px) {
+    body {
+        @include width(6);
+    }
+
+    .blogentry {
+        background: #fff;
+
+        > h1 {
+            float: none;
+            margin: 0;
+            letter-spacing: 1px;
+            padding: 12px 0 0 12px;
+            font-size: 24px;
+            font-weight: 400;
+        }
+
+        .head {
+            padding-left: 12px;
+        }
+
+        > .content {
+            padding: 24px 12px;
+            a {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    #main {
+        > article.front {
+            @include width(3);
+            height: 192px;
+            float: left;
+            padding: 0;
+
+            &:first-child {
+                float: none;
+                @include width(6);
+
+                &:hover > div {
+                    margin-left: 0;
+                }
+            }
+
+            &:hover {
+                > div {
+                    margin-left: -204px;
+                }
+            }
+            > div {
+                -webkit-transition: margin-left .5s ease-in-out;
+                -moz-transition: margin-left .5s ease-in-out;
+                @include width(6);
+                clear: both;
+
+                > header {
+                    float: left;
+                    height: 100%;
+                    @include width(3);
+                }
+                > footer {
+                    float: left;
+                    @include width(3);
+                }
+
+            }
+        }
+    }
+
+}
+
+
+@media only screen and (min-width: 768px) {
+    body {
+        @include width(8);
+
+        > header {
+            height: 96px;
+        }
+    }
+
+    .blogentry {
+        > h1 {
+            padding: 24px 0 0 24px;
+            font-size: 36px;
+        }
+
+        .head {
+            padding-left: 24px;
+        }
+
+        > .content {
+            padding: 48px 24px;
+        }
+    }
+
+    #main {
+        margin-left: #{-$gutter}px;
+
+        > article.front {
+            @include width(4);
+            margin-bottom: #{$gutter}px;
+            margin-left: #{$gutter}px;
+
+            &:first-child {
+                @include width(8);
+
+                &:hover > div {
+                    margin-left: 0;
+                }
+            }
+
+            &:hover {
+                > div {
+                    margin-left: -264px;
+                }
+            }
+            > div {
+                @include width(8);
+
+                > header {
+                    @include width(4);
+                }
+                > footer {
+                    @include width(4);
+                    > div {
+                        padding: 0 #{$gutter}px;
+                    }
+                }
+
+            }
+
+            h2 {
+                font-size: 24px;
+                margin: 24px;
+            }
+        }
+    }
+
+}
+
+
+@media only screen and (min-width: 900px) {
+    body {
+        @include width(12);
+    }
+
+    #main {
+        > article.front {
+            &:first-child {
+                @include width(12);
+            }
+        }
+    }
+}

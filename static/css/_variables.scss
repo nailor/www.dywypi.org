@@ -1,0 +1,7 @@
+$font-size: 16;
+$gutter: 24;
+$column: 48;
+
+@mixin width($cols:1, $modifier:0) {
+    width: #{$cols * ($column + $gutter) - $gutter + $modifier}px;
+}
