@@ -94,7 +94,7 @@ A - B - C - D'' - E' - F (HEAD/another-branch)
    master
 </pre>
 
-# Word of caution
+## Word of caution
 
 This is more of a proof of concept trick and has worked on one real
 life scenario (and I've tested it on simulated environment), but I
