@@ -6,7 +6,10 @@ html, body {
   padding: 0; }
 
 body {
-  background-color: #f5f5f5;
+  background-color: #000;
+  background-image: url(http://photojournal.jpl.nasa.gov/jpeg/PIA11621.jpg);
+  background-repeat: no-repeat;
+  background-position: bottom left;
   margin: 0 auto;
   font-family: 'Cabin', sans-serif;
   font-weight: 400; }
@@ -19,17 +22,22 @@ body {
       float: left;
       text-lowercase: uppercase; }
       body > header > nav > ul > li a {
+        color: #f5f5f5;
         display: block;
         text-shadow: 0px 1px 0px white; }
   body > header h1 {
     margin: 0;
     padding: 0;
-    text-shadow: 0px 1px 0px white; }
+    text-shadow: 0px 1px 0px black; }
+    body > header h1 a, body > header h1 a:link, body > header h1 a:visited {
+      color: #f5f5f5; }
   body > footer {
     font-size: 14px;
-    color: #212121;
+    color: #f5f5f5;
     text-align: right;
     margin-top: 48px; }
+    body > footer a, body > footer a:link, body > footer a:visited {
+      color: #f5f5f5; }
 
 /* Clearfix hack from http://nicolasgallagher.com/micro-clearfix-hack/ */
 /* For modern browsers */
@@ -47,6 +55,12 @@ body {
 a, a:link, a:visited {
   color: black;
   text-decoration: none; }
+
+.info {
+  font-size: small; }
+
+.tail {
+  border-top: 1px solid #cecece; }
 
 @media only screen and (min-width: 320px) {
   body {

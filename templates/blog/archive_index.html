@@ -2,24 +2,27 @@
 {% set title = "Archive" %}
 
 {% block blogcontent %}
-<section>
-  <h2>Archive</h2>
+<section class="blogentry">
+  <h1>Archive</h1>
+  <div class="cf content">
+    <section>
+      <ul>
+        {% for year in archive %}
+        {% for month in archive[year] %}
+        <li><a href="../{{ year }}/{{ "%02d"|format(month) }}/">{{ month }}/{{ year }}</a></li>
+        {% endfor %}
+        {% endfor %}
+      </ul>
+    </section>
 
-  <ul>
-    {% for year in archive %}
-    {% for month in archive[year] %}
-    <li><a href="../{{ year }}/{{ "%02d"|format(month) }}/">{{ month }}/{{ year }}</a></li>
-    {% endfor %}
-    {% endfor %}
-  </ul>
-</section>
-
-<section>
-  <h2>Tags</h2>
-  <ul>
-    {% for tag in tags %}
-    <li><a href="{{ tag.url }}">{{ tag.name }}</a></li>
-    {% endfor %}
-  </ul>
+    <section>
+      <h2>Tags</h2>
+      <ul>
+        {% for tag in tags %}
+        <li><a href="{{ tag.url }}">{{ tag.name }}</a></li>
+        {% endfor %}
+      </ul>
+    </section>
+  </div>
 </section>
 {% endblock %}

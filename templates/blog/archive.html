@@ -2,13 +2,14 @@
 {% set title = "Archive for %s/%s &mdash; dywypi.org" % (month, year) %}
 
 {% block blogcontent %}
-<section>
-  <h2>Archive for {{ month }}/{{ year }}</h2>
-
-  <ul>
-    {% for entry in entries %}
-    <li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
-    {% endfor %}
-  </ul>
+<section class="blogentry">
+  <h1>Archive for {{ month }}/{{ year }}</h1>
+  <div class="content cf">
+    <ul>
+      {% for entry in entries %}
+      <li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
 </section>
 {% endblock %}
